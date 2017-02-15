@@ -102,10 +102,6 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 #ui-bar {
   display: none;
 }
-.passage {
-	font-family: monospace, monospace;
-	color: white;
-  }
 #passages a { color: rgba(18, 153, 0, 1)
 }
 /* Space between the passage text and edges of the screen */
@@ -132,15 +128,15 @@ body.agent{
 }
 body.water{
   background: url("https://cfehlm2.github.io/Twinefile/Images/underwater.jpg")center / cover no-repeat;
-  color: red
+  color: red;
 }
 body.desert{
   background: url("https://cfehlm2.github.io/Twinefile/Images/desert.jpg")  center center / cover no-repeat;
-  color: blue
+  color: blue;
 }
 body.padroom{
   background: url("https://cfehlm2.github.io/Twinefile/Images/padroom.jpg") center center / cover no-repeat;
-  color: rgba(112,169,49,1);
+  color: rgba(63, 63, 191,1);
 }
 body.radial{
   background: url("https://cfehlm2.github.io/Twinefile/Images/swirl.jpg") center center / cover no-repeat;
@@ -148,13 +144,15 @@ body.radial{
 }
 body.kidroom{
   background: url("https://cfehlm2.github.io/Twinefile/Images/kidbedroom.jpg") center center / cover no-repeat;
-  color: Yellow
+  color: Yellow;
 }
 body.brickwall{
   background: url("https://cfehlm2.github.io/Twinefile/Images/brickwall.jpg") center center / cover no-repeat;
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*! <<cyclinglink>> macro for SugarCube 2.x */
 !function(){"use strict";if("undefined"==typeof version||"undefined"==typeof version.title||"SugarCube"!==version.title||"undefined"==typeof version.major||version.major<2)throw new Error("<<cyclinglink>> macro requires SugarCube 2.0 or greater, aborting load");version.extensions.cyclinglinkMacro={major:3,minor:3,revision:2},macros.cyclinglink={handler:function(a,b,c){function toggleText(w){w.classList.remove("cyclingLinkInit"),w.classList.toggle(rl+"Enabled"),w.classList.toggle(rl+"Disabled"),w.style.display="none"===w.style.display?"inline":"none"}var rl="cyclingLink";switch(c[c.length-1]){case"end":var end=!0;c.pop();break;case"out":var out=!0;c.pop()}var v=null;c.length&&"$"===c[0][0]&&(v=c[0].slice(1),c.shift());var h=State.variables;if(!out||!v||""!==h[v]){var l=insertElement(a,"a");l.className="link-internal cyclingLink",l.setAttribute("data-cycle",0);for(var i=0;i<c.length;i++){var on=i===(v?Math.max(c.indexOf(h[v]),0):0),d=insertElement(null,"span",null,"cyclingLinkInit cyclingLink"+(on?"En":"Dis")+"abled");on?(v&&(h[v]=c[i]),l.setAttribute("data-cycle",i)):d.style.display="none",insertText(d,c[i]),on&&end&&i===c.length-1?l.parentNode.replaceChild(d,l):l.appendChild(d)}jQuery(l).ariaClick(function(){var t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length;if(toggleText(t[u]),u+=1,out&&u===m?v&&(h[v]=""):(u%=m,v&&(h[v]=c[u])),(end||out)&&u===m-(end?1:0)){if(!end)return void this.parentNode.removeChild(this);var n=this.removeChild(t[u]);return n.className=rl+"End",n.style.display="inline",void this.parentNode.replaceChild(n,this)}toggleText(t[u]),this.setAttribute("data-cycle",u)})}}}}();
+
 
 
 
@@ -324,7 +322,9 @@ $shark&#x27;s health: &#x27;&#x27;&lt;&lt;print $sharkhealth&gt;&gt;&#x27;&#x27;
 &lt;&lt;audio &quot;suspense&quot; stop&gt;&gt;\
 You swim to the coast barely escaping the jaws of the $shark.
 
-You look around the [[beach-&gt;Area]]</tw-passagedata><tw-passagedata pid="13" name="Door" tags="radial" position="851,499">&lt;&lt;audio &quot;ocean&quot; stop&gt;&gt;\
+You look around the [[beach-&gt;Area]]</tw-passagedata><tw-passagedata pid="13" name="Door" tags="radial" position="851,499">&lt;&lt;display &quot;Countdown&quot;&gt;&gt;
+&lt;&lt;set $seconds2 = 190&gt;&gt;
+&lt;&lt;audio &quot;ocean&quot; stop&gt;&gt;\
 &lt;&lt;audio &quot;padsuspense&quot; play loop volume 1&gt;&gt;\
 You open the door and you are sucked through.
 &lt;img src=&quot;https://cfehlm2.github.io/Twinefile/Images/door2.jpg&quot; width=&quot;300&quot; height=&quot;300&quot;&gt;
@@ -544,7 +544,7 @@ You notice another door with a padlock under it
 
 When you come to the bed you dont see anything  except a screwdriver under the mattress or the bed.
 &lt;&lt;set $screw = true&gt;&gt;
-[[Go somewhere else-&gt;room]]</tw-passagedata><tw-passagedata pid="34" name="StoryInit" tags="" position="100,750">&lt;&lt;set $haskey = false&gt;&gt;
+[[Go somewhere else-&gt;room]]</tw-passagedata><tw-passagedata pid="34" name="StoryInit" tags="" position="101,751">&lt;&lt;set $haskey = false&gt;&gt;
 &lt;&lt;set $screw = false&gt;&gt;
 &lt;&lt;set $seconds2 = 190&gt;&gt;
 
